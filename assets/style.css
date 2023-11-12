@@ -10,6 +10,7 @@ body {
 
 #header {
     margin-top: 10%;
+    text-align: center;
 }
 
 #timer {
@@ -24,11 +25,11 @@ body {
 
 #start-btn {
     display: flex;
-    margin-left: 200px;
+    margin-left: 250px;
 }
 
 
-ul {
+#question-container-1 {
     list-style: none;
-    margin-top: 25%;
+    margin-top: 10%;
 }

@@ -11,7 +11,7 @@
 
 <body>
 
-    
+
 
     <header id="header">
         <h1>Coding Quiz Challenge</h1>
@@ -21,64 +21,96 @@
         <button id="start-btn">Start</button>
     </header>
 
-    <div id="timer"><h4></h4></div>
+    <div id="timer">
+        <h4></h4>
+    </div>
 
     <!--Questions section-->
-    <div id="question-1">
-        <ul>
-            <h2>What is a JavaScript function?</h2><br>
-            <li id="correct">a reusable block of code designed to perform a particular task</li><br>
-            <li id="incorrect">a block of code that cannot be used more than once </li><br>
-            <li id="incorrect">functions are not real </li><br>
-            <li id="incorrect">functions are used to store variables </li><br>
-        </ul>
+
+    <div id="question-container-1">
+        <h2>
+            <p>What is a JavaScript function?</p>
+        </h2><br>
+
+        <div class="option" onclick="checkAnswer1(this)">a reusable block of code designed to perform a particular task</div><br>
+        <div class="option" onclick="checkAnswer1(this)">a block of code that cannot be used more than once</div><br>
+        <div class="option" onclick="checkAnswer1(this)">functions are not real</div><br>
+        <div class="option" onclick="checkAnswer1(this)">functions are used to store variables</div><br>
+        <p id="result1"></p>
     </div>
 
-    <div id="question-2">
-        <ul>
-            <h2>What is the difference between a local and global scope variables in JavaScript?</h2>
+     <div id="question-container-2">
 
-            <li>both global and local scoped variables are accessible anywhere in your code </li><br>
-            <li>local scope variables can be accessed in more than one function </li><br>
-            <li>global scope variables are accessible from any part of your code, and local scope variables are not
-            </li><br>
-            <li>local scope variables can only be used </li>
-        </ul>
+        <h2>
+            <p>What is the difference between a local and global scope variables in JavaScript?</p>
+
+        </h2><br>
+
+        <div class="option" onclick="checkAnswer2(this)">both global and local scoped variables are accessible anywherein your code</div><br>
+        <div class="option" onclick="checkAnswer2(this)">local scope variables can be accessed in more than one function</div><br>
+        <div class="option" onclick="checkAnswer2(this)">global scope variables are accessible from any part of your code, and local scope variables are not</div><br>
+        <div class="option" onclick="checkAnswer2(this)">local scope variables can only be used</div>
+        <p id="result2"></p>
     </div>
 
-    <div id="question-3">
-        <ul>
-            <h2>".querySelector" is used to select multiple elements</h2>
+    <div id="question-container-3">
+        
+            <h2>
+                <p>.querySelector" is used to select multiple elements</p></h2>
 
-            <li>true</li><br>
-            <li>false </li>
-
-        </ul>
+            <div class="option" onclick="checkAnswer3(this)">true</div><br>
+            <div class="option" onclick="checkAnswer3(this)">false</div>
+            <p id="result3"></p>
     </div>
 
-    <div id="question-4">
-        <ul>
-            <h2>When a web application can adapt to different device and screen sizes, this is called ____ ?</h2>
+    <div id="question-container-4">
+            <h2>
+                <p>When a web application can adapt to different device and screen sizes, this is called ____ ?</p>
 
-            <li>static </li><br>
-            <li>responsive design </li><br>
-            <li>mobile </li><br>
-            <li>adaptive design </li>
-        </ul>
+            </h2>
+
+            <div class="option" onclick="checkAnswer4(this)">static</div><br>
+            <div class="option" onclick="checkAnswer4(this)">responsive design</div><br>
+            <div class="option" onclick="checkAnswer4(this)">mobile</div><br>
+            <div class="option" onclick="checkAnswer4(this)">adaptive design</div>
+        <p id="result4"></p>
     </div>
 
-    <div id="question-5">
-        <ul>
-            <h2>'click', 'submit', 'mouseover' are examples of ____ ? </h2>
+    <div id="question-container-5">
+        
+            <h2>
+                <p>'click', 'submit', 'mouseover' are examples of ____ ? </p>
 
-            <li>arrays </li><br>
-            <li>functions </li><br>
-            <li>event handlers </li><br>
-            <li>variables </li>
-        </ul>
+            </h2>
+
+            <div class="option" onclick="checkAnswer5(this)">arrays</div><br>
+            <div class="option" onclick="checkAnswer5(this)">functions</div><br>
+            <div class="option" onclick="checkAnswer5(this)">event handlers</div><br>
+            <div class="option" onclick="checkAnswer5(this)">variables</div>
+       <p id="result5"></p>
     </div>
 
+</div>
 
+
+<div id="form">
+
+    <form action="/submit" method="post">
+        <!-- Text Input Field -->
+        <label for="username">Username:</label>
+
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+    
+    
+
+
+      
+  </div>
 
 
     <script src="./assets/script.js"></script>
