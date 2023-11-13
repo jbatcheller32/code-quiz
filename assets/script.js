@@ -13,14 +13,14 @@ var answerResultELFive = document.querySelector('#result5');
 var nameSubmit = document.querySelector('#form').style.display = "none";
 var userInput = document.querySelector('#initials');
 var formBtn = document.querySelector('#userInitials');
-var output = document.querySelector('#output');
+var formResultEl = document.querySelector('#form-result').style.display = "none";
 var optionEl = document.querySelectorAll('.option');
 var timerEl = document.querySelector('#timer');
 var count = 60;
 var score = 0;
 
 
-// Main function to get the quiz and timer started
+// Main function to get the quiz and timer started. it will say time is up once it hits 0
 function startQuiz() {
 
     var setTimer = setInterval(function () {
@@ -35,7 +35,7 @@ function startQuiz() {
 
     }, 1000);
 
-    // display the next question and hide the previous
+    // display the next question and hide the previous question, so only one question displays at a time
 
     var displayQuestion = document.querySelector('#question-container-1');
     displayQuestion.setAttribute('style', "display: block;");
@@ -49,7 +49,7 @@ function startQuiz() {
 startButtonEl.addEventListener('click', startQuiz);
 
 
-// Question 1
+// Question 1 
 
 
 function checkAnswer1(choice) {
@@ -68,7 +68,7 @@ function checkAnswer1(choice) {
         count -= 5;
     }
 
-    //display the next question and hide the previous after 1 second
+    //display the next question and hide the previous after 1 second. This is so you see if you got the answer right or not
 
     setTimeout(function () {
 
@@ -232,10 +232,29 @@ formBtn.addEventListener('click', function() {
    
     if (init === userInput) {
         output.textContent = "Initials" + userInput;
-        console.log("user", init);
+        
     }
 
     localStorage.setItem("initials", init);
+
+
+    setTimeout(function () {
+
+        var displayQuestion = document.querySelector('#form-result');
+        displayQuestion.setAttribute('style', "display: block;");
+
+
+        var hidePrevious = document.querySelector('#form');
+        hidePrevious.setAttribute('style', "display: none;");
+
+        if (init === userInput || init !== userInput) {
+            hidePrevious;
+
+        }
+    }, 2000);
+
+
+
 });
 
 
