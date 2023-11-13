@@ -29,7 +29,30 @@ body {
 }
 
 
-#question-container-1 {
+#question-container-1, #question-container-2, 
+#question-container-3, #question-container-4,
+#question-container-5 {
     list-style: none;
     margin-top: 10%;
+    border-bottom: solid 2px;
+}
+
+.option {
+    padding-top: 4px;
+    background-color: #598d9e;
+    border: 1px #fff solid;
+    border-radius: 5px;
+    height: 30px;
+    width: max-content;
+}
+
+.option:hover {
+    background-color: #92b6bd;
+    color: #fff;
+}
+
+#result1, #result2,
+#result3, #result4, #result5 {
+    font-size: 20px;
+    
 }

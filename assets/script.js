@@ -11,9 +11,13 @@ var answerResultELThree = document.querySelector('#result3');
 var answerResultELFour = document.querySelector('#result4');
 var answerResultELFive = document.querySelector('#result5');
 var nameSubmit = document.querySelector('#form').style.display = "none";
+var userInput = document.querySelector('#initials');
+var formBtn = document.querySelector('#userInitials');
+var output = document.querySelector('#output');
 var optionEl = document.querySelectorAll('.option');
 var timerEl = document.querySelector('#timer');
 var count = 60;
+var score = 0;
 
 
 // Main function to get the quiz and timer started
@@ -26,9 +30,8 @@ function startQuiz() {
 
         if (count === 0) {
             clearInterval(setTimer);
-            return;
-
-        }
+            timerEl.textContent = "Time's up!";
+        } 
 
     }, 1000);
 
@@ -48,7 +51,9 @@ startButtonEl.addEventListener('click', startQuiz);
 
 // Question 1
 
+
 function checkAnswer1(choice) {
+    
     var selectedAnswer = choice.textContent;
     var correctAnswer = "a reusable block of code designed to perform a particular task";
 
@@ -57,7 +62,6 @@ function checkAnswer1(choice) {
         answerResultEL.textContent = "Correct!";
 
         // if you get answer wrong it will subtract 5 seconds off the timer
-
     } else {
 
         answerResultEL.textContent = "Incorrect!";
@@ -94,11 +98,12 @@ function checkAnswer2(choice) {
 
     if (selectedAnswer === correctAnswer) {
         answerResultELTwo.textContent = "Correct!";
+        
     } else {
         answerResultELTwo.textContent = "Incorrect!";
         count -= 5;
     }
-
+   
     setTimeout(function () {
 
         var displayQuestion = document.querySelector('#question-container-3');
@@ -126,11 +131,12 @@ function checkAnswer3(choice) {
 
     if (selectedAnswer === correctAnswer) {
         answerResultELThree.textContent = "Correct!";
+       
     } else {
         answerResultELThree.textContent = "Incorrect!";
         count -= 5;
     }
-
+    
     setTimeout(function () {
 
         var displayQuestion = document.querySelector('#question-container-4');
@@ -159,11 +165,12 @@ function checkAnswer4(choice) {
 
     if (selectedAnswer === correctAnswer) {
         answerResultELFour.textContent = "Correct!";
+        
     } else {
         answerResultELFour.textContent = "Incorrect!";
         count -= 5;
     }
-
+    
     setTimeout(function () {
 
         var displayQuestion = document.querySelector('#question-container-5');
@@ -191,11 +198,12 @@ function checkAnswer5(choice) {
 
     if (selectedAnswer === correctAnswer) {
         answerResultELFive.textContent = "Correct!";
+        
     } else {
         answerResultELFive.textContent = "Incorrect!";
         count -= 5;
     }
-
+  
     setTimeout(function () {
 
         var displayQuestion = document.querySelector('#form');
@@ -213,6 +221,25 @@ function checkAnswer5(choice) {
 
 
 }
+
+// Form function 
+
+
+formBtn.addEventListener('click', function() { 
+    
+    var init = userInput.value; 
+
+   
+    if (init === userInput) {
+        output.textContent = "Initials" + userInput;
+        console.log("user", init);
+    }
+
+    localStorage.setItem("initials", init);
+});
+
+
+
 
 
 

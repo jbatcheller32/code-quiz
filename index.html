@@ -38,6 +38,7 @@
         <div class="option" onclick="checkAnswer1(this)">functions are used to store variables</div><br>
         <p id="result1"></p>
     </div>
+    
 
      <div id="question-container-2">
 
@@ -95,16 +96,18 @@
 
 <div id="form">
 
-    <form action="/submit" method="post">
+    <form method="post">
         <!-- Text Input Field -->
-        <label for="username">Username:</label>
+        <label for="initials">Initials:</label>
 
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="initials" name="initials" required>
         <br>
 
         <!-- Submit Button -->
-        <input type="submit" value="Submit">
+        <button id="userInitials" value="Submit">Submit</button>
     </form>
+
+    <div id="output"></div>
     
     
 
