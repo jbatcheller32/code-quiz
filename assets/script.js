@@ -18,13 +18,14 @@ var optionEl = document.querySelectorAll('.option');
 var timerEl = document.querySelector('#timer');
 var count = 60;
 var score = 0;
+var setTimer;
 
 
 // Main function to get the quiz and timer started. it will say time is up once it hits 0
 function startQuiz() {
 
-    var setTimer = setInterval(function () {
-
+    setTimer = setInterval(function () {
+        
         count--;
         timerEl.textContent = "Time Left: " + count;
 
@@ -219,8 +220,16 @@ function checkAnswer5(choice) {
         }
     }, 1000);
 
-
+    function stopTimer () {
+        clearInterval(setTimer);
+        timerEl.textContent = "Finished!";
+    };
+    stopTimer();
 }
+
+
+
+
 
 // Form function 
 
